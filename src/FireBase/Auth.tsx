@@ -20,6 +20,18 @@ interface SigninData {
   password: string;
 }
 
+type ProductData = {
+  category: string;
+  description: string;
+  id: string;
+  is_cart: boolean;
+  is_fav: boolean;
+  p_amount: number;
+  p_count: number;
+  p_img: string;
+  p_name: string;
+  price: number;
+};
 export const CreateUser = async (
   data: SignupData
 ): Promise<{ success: boolean; message: string }> => {
@@ -126,6 +138,21 @@ export const getUserDataByUID = async (uid: string) => {
       });
       console.log(`Successfully updated ${field} to ${value} for item with ID: ${itemId}`);
       return { message: `Successfully updated`};
+    } catch (error: unknown) {
+      console.error(`Error updating ${field} for item with ID: ${itemId}`, error);
+      if (error instanceof Error) {
+        return { success: false, message: error.message };
+      }
+    }
+  };
+  export const addKeyToUser  = async (itemId: string, field: string, value:ProductData[]) => {
+    try {
+      const itemRef = doc(db, "users", itemId); 
+      await updateDoc(itemRef, {
+        [field]: value, 
+      });
+      console.log(`Successfully updated ${field} to ${value} for item with ID: ${itemId}`);
+      return { message: `Payment SuccessFull`};
     } catch (error: unknown) {
       console.error(`Error updating ${field} for item with ID: ${itemId}`, error);
       if (error instanceof Error) {

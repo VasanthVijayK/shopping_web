@@ -219,18 +219,7 @@ export const StyledCardTypo= styled(Typography)(({ theme }) => ({
 export const StyledCardData = styled(Paper)(({ theme }) => ({
   minWidth: 180, height: 90, position: "relative", padding: "1rem"
 }));
-// const GlassmorphismButton = styled(Button)(({ theme }) => ({
-//   background: `rgba(${theme.palette.primary.main.replace('#', '')}, 0.72)`,
-//   borderRadius: '16px',
-//   boxShadow: '0 4px 30px rgba(0, 0, 0, 0.1)',
-//   backdropFilter: 'blur(5px)',
-//   '-webkit-backdrop-filter': 'blur(5px)',
-//   border: `1px solid rgba(${theme.palette.primary.main.replace('#', '')}, 0.3)`,
-//   color: theme.palette.primary.contrastText,
-//   '&:hover': {
-//     background: `rgba(${theme.palette.primary.main.replace('#', '')}, 0.8)`,
-//   },
-// }));
+
 export const StyledCardBox = styled(Box)(({ theme }) => ({
   display: "flex",
                     justifyContent: "flex-end",

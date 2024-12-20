@@ -27,6 +27,7 @@ import InputLabel from "@mui/material/InputLabel";
 import MenuItem from "@mui/material/MenuItem";
 import FormControl from "@mui/material/FormControl";
 import Select, { SelectChangeEvent } from "@mui/material/Select";
+import CardActionArea from '@mui/material/CardActionArea';
 interface ExpandMoreProps extends IconButtonProps {
   expand: boolean;
 }
@@ -191,6 +192,7 @@ export default function RecipeReviewCard() {
                 return (
                   <Grid key={e.id} size={{ xs: 2, sm: 4, md: 4 }}>
                     <Card sx={{ maxWidth: 345 }}>
+                    <CardActionArea>
                       <CardHeader
                         action={
                           <IconButton
@@ -259,6 +261,7 @@ export default function RecipeReviewCard() {
                           </Typography>
                         </CardContent>
                       </Collapse>
+                      </CardActionArea>
                     </Card>
                   </Grid>
                 );
